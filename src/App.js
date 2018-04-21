@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { View } from './components/common';
+import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import reducers from './reducers';
 import LoginForm from './components/LoginForm';
@@ -27,9 +28,7 @@ class App extends Component {
 
     return (
 			<Provider store={store}>
-				<View>
-					<LoginForm />
-				</View>	
+				<LoginForm />
 			</Provider>
     );
   }
